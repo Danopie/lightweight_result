@@ -5,7 +5,7 @@ Result<T, Exception> runCatching<T>(T Function() block) {
   try {
     return Result.ok(block());
   } on Exception catch (e) {
-    return Result.failure(e);
+    return Result.err(e);
   }
 }
 
@@ -15,7 +15,7 @@ extension ResultFactory<T, E> on T {
     if (this != null) {
       return Result.ok(this);
     } else {
-      return Result.failure(error());
+      return Result.err(error());
     }
   }
 }

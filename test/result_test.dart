@@ -9,15 +9,15 @@ void main() {
   });
 
   test("Result should reflect isFailure correctly", () {
-    final result = Result<String, String>.failure("5");
+    final result = Result<String, String>.err("5");
     expect(result.isSuccess, isFalse);
     expect(result.isFailure, isTrue);
   });
 
   test("Result should be comparable", () {
-    final result1 = Result<String, String>.failure("5");
-    final result2 = Result<String, String>.failure("5");
-    final result3 = Result<String, String>.failure("7");
+    final result1 = Result<String, String>.err("5");
+    final result2 = Result<String, String>.err("5");
+    final result3 = Result<String, String>.err("7");
     final result4 = Result<String, String>.ok("5");
     final result5 = Result<String, String>.ok("5");
     expect(result1, equals(result2));

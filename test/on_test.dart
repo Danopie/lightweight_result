@@ -20,7 +20,7 @@ void main() {
 
     test("onSuccess() should invoke nothing if failure", () {
       final counter = Counter(50);
-      Result.failure(counter).onSuccess((_) {
+      Result.err(counter).onSuccess((_) {
         counter.count += 50;
       });
       expect(counter.count, 50);
@@ -38,7 +38,7 @@ void main() {
 
     test("onFailure() should invoke action if error", () {
       final counter = Counter(50);
-      Result.failure(counter).onFailure((_) {
+      Result.err(counter).onFailure((_) {
         counter.count += 50;
       });
       expect(counter.count, 100);

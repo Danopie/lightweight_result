@@ -5,14 +5,14 @@ extension ResultMap<T, E> on Result<T, E> {
     if (isSuccess)
       return Result.ok(transform(value));
     else
-      return Result.failure(error);
+      return Result.err(error);
   }
 
   Result<T, U> mapError<U>(U Function(E) transform) {
     if (isSuccess)
       return Result.ok(value);
     else
-      return Result.failure(transform(error));
+      return Result.err(transform(error));
   }
 
   Result<U, E> mapOr<U>(U Function(T) transform, U defaultValue) {
@@ -39,7 +39,7 @@ extension ResultMap<T, E> on Result<T, E> {
 
   Result<T, E> toErrorIf(bool Function(T) predicate, E transform(T)) {
     if (isSuccess && predicate(value)) {
-      return Result.failure(transform(value));
+      return Result.err(transform(value));
     } else {
       return this;
     }
@@ -47,7 +47,7 @@ extension ResultMap<T, E> on Result<T, E> {
 
   Result<T, E> toErrorUnless(bool Function(T) predicate, E transform(T)) {
     if (isSuccess && !predicate(value)) {
-      return Result.failure(transform(value));
+      return Result.err(transform(value));
     } else {
       return this;
     }

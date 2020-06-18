@@ -8,7 +8,7 @@ void main() {
     });
 
     test("unwrap() should throw exception upon failure", () {
-      expect(() => Result.failure("Error").unwrap(), throwsA(isA<UnwrapException>()));
+      expect(() => Result.err("Error").unwrap(), throwsA(isA<UnwrapException>()));
     });
   });
 
@@ -18,7 +18,7 @@ void main() {
     });
 
     test("unwrapError() should return error upon failure", () {
-      expect(Result.failure("Error").unwrapError(), "Error");
+      expect(Result.err("Error").unwrapError(), "Error");
     });
   });
 }

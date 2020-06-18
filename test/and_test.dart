@@ -10,7 +10,7 @@ void main() {
     });
 
     test("and() should return new error upon success", () {
-      expect(Result.ok(300).and(() => Result.failure(AndError())).getError(),
+      expect(Result.ok(300).and(() => Result.err(AndError())).getError(),
           isA<AndError>());
     });
   });
@@ -24,7 +24,7 @@ void main() {
       expect(
           Result.ok(20)
               .andThen((value) => Result.ok(value + 43))
-              .andThen((value) => Result.failure(AndError()))
+              .andThen((value) => Result.err(AndError()))
               .getError(),
           isA<AndError>());
     });

@@ -15,6 +15,6 @@ extension ResultAnd<T, E> on Result<T, E> {
     if (isSuccess)
       return transform(value);
     else
-      return Result.failure(error);
+      return Result.err(error);
   }
 }

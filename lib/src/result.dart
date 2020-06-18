@@ -6,7 +6,7 @@ class Result<T, E> {
     this.value,
   ) : error = null;
 
-  Result.failure(
+  Result.err(
     this.error,
   ) : value = null;
 

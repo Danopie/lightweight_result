@@ -9,7 +9,7 @@ void main() {
     });
 
     test("get() should return null upon failure", () {
-      final result = Result<String, String>.failure("Not parsable");
+      final result = Result<String, String>.err("Not parsable");
       expect(result.get(), isNull);
     });
   });
@@ -21,7 +21,7 @@ void main() {
     });
 
     test("get() should return null upon failure", () {
-      final result = Result<String, String>.failure("Not parsable");
+      final result = Result<String, String>.err("Not parsable");
       expect(result.getError(), "Not parsable");
     });
   });
@@ -33,14 +33,14 @@ void main() {
     });
 
     test("getOr() should return default value upon failure", () {
-      final result = Result<String, String>.failure("Not parsable");
+      final result = Result<String, String>.err("Not parsable");
       expect(result.getOr(() => "10"), "10");
     });
   });
 
   group("test getErrorOr()", () {
     test("getErrorOr() should return error upon failure", () {
-      final result = Result<String, String>.failure("An error");
+      final result = Result<String, String>.err("An error");
       expect(result.getErrorOr(() => "Another error"), "An error");
     });
 
@@ -52,7 +52,7 @@ void main() {
 
   group("test getOrElse()", () {
     test("getOrElse() should return new value upon error", () {
-      final result = Result<int, String>.failure("An error");
+      final result = Result<int, String>.err("An error");
       expect(result.getOrElse((error) => 5), 5);
     });
 
@@ -69,7 +69,7 @@ void main() {
     });
 
     test("getErrorOrElse() should return error upon failure", () {
-      final result = Result<int, String>.failure("An error");
+      final result = Result<int, String>.err("An error");
       expect(result.getErrorOrElse((value) => "New error"), "An error");
     });
   });
