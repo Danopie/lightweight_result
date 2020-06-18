@@ -8,3 +8,4 @@ export 'package:lightweight_result/src/on.dart';
 export 'package:lightweight_result/src/or.dart';
 export 'package:lightweight_result/src/result.dart';
 export 'package:lightweight_result/src/unwrap.dart';
+export 'package:lightweight_result/src/zip.dart';
