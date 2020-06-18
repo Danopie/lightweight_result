@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:result_monad/result_monad.dart';
+import 'package:lightweight_result/lightweight_result.dart';
 
 class CallbackException implements Exception {}
 

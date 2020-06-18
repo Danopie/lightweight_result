@@ -1,4 +1,4 @@
-import 'package:result_monad/src/result.dart';
+import 'package:lightweight_result/src/result.dart';
 
 extension ResultOr<T, E> on Result<T, E> {
   Result<T, E> or(Result<T, E> Function() result) {

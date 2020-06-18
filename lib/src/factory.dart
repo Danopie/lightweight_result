@@ -1,4 +1,4 @@
-import 'package:result_monad/src/result.dart';
+import 'package:lightweight_result/src/result.dart';
 
 /// Calls the specified function [block] and returns its encapsulated result if invocation was successful, catching and encapsulating any thrown exception as a failure.
 Result<T, Exception> runCatching<T>(T Function() block) {

@@ -1,4 +1,4 @@
-import 'package:result_monad/src/result.dart';
+import 'package:lightweight_result/src/result.dart';
 
 extension ResultMap<T, E> on Result<T, E> {
   Result<U, E> map<U>(U Function(T) transform) {

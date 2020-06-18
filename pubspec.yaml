@@ -1,4 +1,4 @@
-name: result_monad
+name: lightweight_result
 description: A result monad for Dart. Heavily inspired by kotlin-result.
 version: 0.0.1
 author:

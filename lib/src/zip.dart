@@ -1,6 +1,6 @@
-import 'package:result_monad/src/and.dart';
-import 'package:result_monad/src/map.dart';
-import 'package:result_monad/src/result.dart';
+import 'package:lightweight_result/src/and.dart';
+import 'package:lightweight_result/src/map.dart';
+import 'package:lightweight_result/src/result.dart';
 
 Result<T, E> zip2<T1, T2, T, E>(
   Result<T1, E> result1,
