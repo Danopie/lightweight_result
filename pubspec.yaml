@@ -1,6 +1,6 @@
 name: lightweight_result
 description: A result monad for Dart. Heavily inspired by kotlin-result.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/Danopie/lightweight_result
 
 environment:
